@@ -38,7 +38,7 @@ The rationale behind Rotor's single-layer design stems from the network delay in
 
 After a block has been distributed by Rotor, the nodes start to vote on it. **This voting process is governed by Alpenglow's novel voting protocol, Votor.**
 
-**The core idea behind Votor is to run two voting paths at the same time and let nodes pick the one that's faster for *them*.** This means: Every node always starts voting on both paths. To finalize a block, a node only needs to complete one voting path. As a result, it automatically picks the path that happened to be faster this time. This ensures a relatively low latency for all nodes, independent of their location. It also allows the system to flexibly adapt to changes in the network topology. **The overall effect is a dramatic decrease in average latency.**
+**The core idea behind Votor is to run two voting paths at the same time and let nodes pick the one that's faster for *them*.** This means: Every node always starts voting on both paths. But it only needs to complete one of these paths to finalize a block. As a result, it automatically picks the path that happened to be faster this time. This ensures a relatively low latency for all nodes, independent of their location. It also allows the system to flexibly adapt to changes in the network topology. **The overall effect is a dramatic decrease in average latency.**
 
 In Votor, nodes operate on two voting paths:
 * Path 1: If at least 80% of stake participates, the block is finalized after one round of voting
