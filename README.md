@@ -109,7 +109,7 @@ Keep in mind that this refers to **finality**, i.e. the final decision on whethe
 
 Also, keep in mind that we're talking about a **globally distributed Layer-1 blockchain** managing assets worth billions of dollars.
 
-Taking this into account, **this is a remarkably low figure**!
+Taking this into account, **this is a remarkably low figure!**
 
 This drastic reduction in latency **directly leads to a significantly improved user experience**, with transactions reaching finality almost instantly and users seeing results almost in real time.
 
@@ -117,25 +117,25 @@ This drastic reduction in latency **directly leads to a significantly improved u
 
 It's likely that Alpenglow's approach makes it easier to [implement](https://x.com/aeyakovenko/status/1924814494808891843) multiple concurrent leaders.
 
-This would allow Solana to [minimize how much MEV](https://x.com/aeyakovenko/status/1810222589991583922) is extracted from users: If users can choose between multiple leaders, they can pick the best offer from leaders, which leads to competition between them
+This would allow Solana to [minimize how much MEV](https://x.com/aeyakovenko/status/1810222589991583922) is extracted from users: If users can choose between multiple leaders, they can choose the most favorable offer, which leads to competition between the leaders to minimize MEV in their proposed block.
 
-It would also make it feasible to create an on-chain [central limit order book](https://www.anza.xyz/blog/the-path-to-decentralized-nasdaq).
+This would also make it feasible to create an on-chain [central limit order book](https://www.anza.xyz/blog/the-path-to-decentralized-nasdaq).
 
-In that way, Alpenglow's technical revolution sets the stage for more improvements to Solana in the future.
+That way, Alpenglow's technological revolution sets the stage for more future improvements to Solana.
 
 ## Conclusion
 
-Alpenglow marks a major advancement for the Solana blockchain.
+With the advent of Alpenglow, Solana is poised for a new era of performance and capability.
 
-Its new consensus mechanism enables a drastic reduction in latency, unlocking an unprecedented level of performance and enabling a new generation of real-time applications.
+This innovative consensus protocol enables a dramatic reduction in latency, unlocking unprecedented levels of performance and enabling the development of a new generation of real-time applications.
 
-Alpenglow achieves this while also providing enhanced security guarantees.
+Importantly, Alpenglow achieves this while bolstering network security.
 
 Furthermore, it paves the way for future improvements, such as support for multiple concurrent leaders.
 
-These advancements promise significant changes for both users and developers, signaling a bright future for the Solana ecosystem. 
+These advancements promise a bright future for the Solana ecosystem, offering significant benefits to both users and developers.
 
-In broader terms, this comprehensive redesign of Solana's consensus architecture unlocks unprecedented performance levels.  This positions Solana to support a new generation of real-time applications and solidifies its position as a leading global high-performance proof-of-stake blockchain. 
+This comprehensive redesign of Solana's consensus architecture solidifies its position as a leading global high-performance proof-of-stake blockchain.
 
 ## Additional Resources
 
