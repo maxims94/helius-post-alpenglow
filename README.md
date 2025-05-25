@@ -107,7 +107,7 @@ Results from [experiments](https://drive.google.com/file/d/1y_7ddr8oNOknTQYHzXee
 
 Keep in mind that this refers to **finality**, i.e. the final decision on whether to add a transaction to the blockchain -- not optimistic confirmation or similar.
 
-Also, keep in mind that we're talking about adding a transaction to a **globally distributed Layer-1 blockchain** that manages billions of dollars of assets.
+Also, keep in mind that we're talking about adding a transaction to a **globally distributed Layer-1 blockchain** that manages billions of dollars worth of assets.
 
 Taking this into account, **this is a remarkably low figure!**
 
