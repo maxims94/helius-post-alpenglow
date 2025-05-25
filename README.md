@@ -105,7 +105,7 @@ Here, the fundamental lower bound is the base network latency. That's the time t
 
 Results from [experiments](https://drive.google.com/file/d/1y_7ddr8oNOknTQYHzXeeMD2ProQ0WjMs/view) on a reference implementation indicate the following rule of thumb: **the time it takes to distribute and finalize a block is roughly 2x the base network latency.** So, if the latency is 75ms, it takes 150ms to finalize a block.
 
-Keep in mind that this refers to **finality**, i.e. the final decision on whether to put a transaction into the blockchain -- not optimistic confirmation or similar.
+Keep in mind that this refers to **finality**, i.e. the final decision on whether to add a transaction to the blockchain -- not optimistic confirmation or similar.
 
 Also, keep in mind that we're talking about executing transactions on a **globally distributed Layer-1 blockchain** managing assets worth billions of dollars.
 
