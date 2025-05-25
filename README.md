@@ -46,9 +46,9 @@ In Votor, nodes operate on two voting paths:
 
 The dominant factor in how long a round of voting takes is the network delay. This is mostly determined by the geographical position of a node relative to the other nodes.
 
-If a node is part of geographically close cluster (e.g. with a latency of 5ms), then the two rounds of voting may happen much faster (in ca. 10ms) than a single round that needs to include remote notes.
+If a node is part of geographically close cluster (e.g. with a latency of 5ms), then the two rounds of voting may happen much faster (e.g. in ca. 10ms) than a single round that needs to include remote notes with high latencies.
 
-Conversely, if a node is far away from most other nodes, then the latency is so high that one round of voting is done much earlier than two rounds.
+Conversely, if a node is far away from most other nodes, then the latency may be so high that one round of voting is done much earlier than two rounds (where the high latency is effectively doubled).
 
 By concurrently executing both paths, Votor dynamically adapts to network conditions, ensuring rapid consensus.
 
