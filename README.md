@@ -64,7 +64,7 @@ Before we can reason about the fault tolerance of Alpenglow's network, we need t
 
 **Down Node**: A node that is failing to participate in the network. It's silent rather than malicious. This could be due to a software crash, hardware failure or loss of network connectivity.
 
-Why do we treat down nodes as a separate case? In real-world blockchain systems, Byzantine nodes are very rare since nodes have no incentive to behave that way. Instead, bad behavior often comes from machine misconfigurations, software crashes, hardware issues and network or power outages. In other words, large-scale faults are likely accidents rather than coordinated attacks. Evidently, down nodes are easier to manage than Byzantine nodes. **By separating these two failure modes, we can make stronger guarantees about the network's fault tolerance.**
+Why do we treat down nodes as a separate case? In real-world blockchain systems, Byzantine nodes are rare since nodes have no incentive to behave that way. Instead, bad behavior often comes from machine misconfigurations, software crashes, hardware issues and network or power outages. In other words, large-scale faults are likely accidents rather than coordinated attacks. Evidently, down nodes are easier to manage than Byzantine nodes. **By separating these two failure modes, we can make stronger guarantees about the network's fault tolerance.**
 
 ### 20+20 resilience
 
