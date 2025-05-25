@@ -1,10 +1,10 @@
 # Alpenglow: The future of Solana's consensus
 
-Alpenglow is the biggest change to Solana's core protocols the blockchain has ever seen. Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
+Alpenglow is the biggest change to Solana's core protocols that the blockchain has ever seen. Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
 
-The most compelling characteristic of Alpenglow is a dramatic reduction in finalization latency. In the current system, it takes 12.8s on average to finalize a block. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
+The most compelling characteristic of Alpenglow is a **dramatic reduction in finalization latency**. In the current system, it takes 12.8s on average to finalize a block. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
 
-The protocol achieves this speed-up while also bolstering network security and resilience. The network will remain operational even if up to 40% of nodes are faulty (under some realistic assumptions). This is achieved through its unique 20+20 model, which marks a paradigm shift in attack modeling.
+The protocol achieves this speed-up while also **bolstering network security and resilience**. Under some realistic assumptions, the network will remain operational even if up to 40% of nodes are faulty. This is achieved through its unique 20+20 model, which marks a paradigm shift in attack modeling.
 
 Let's explore how it works and what it means for Solana's future.
 
@@ -12,9 +12,13 @@ Let's explore how it works and what it means for Solana's future.
 
 Alpenglow is a novel consensus protocol specifically designed for high-performance proof-of-stake blockchains. Like any consensus protocol, its purpose is to create agreement on the ledger's state between the nodes of the network.
 
-While maintaining Solana's fundamental structure, Alpenglow introduces key innovations.
+While maintaining Solana's fundamental structure, Alpenglow replaces some of its components with enhanced versions and introduces some key innovations.
 
-As in the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks. To efficiently disseminate the blocks to the network, they use **Rotor**, a new protocol introduced by Alpenglow. Once a block has been propagated, nodes start to engage in a voting process. This is governed by the second new protocol, **Votor**. The voting process occurs over a 1-2 rounds of voting, ending with the decision to either append the block to the blockchain or reject it.
+As in the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks.
+
+To efficiently disseminate the blocks to the network, they use **Rotor**, a new protocol introduced by Alpenglow.
+
+Once a block has been propagated, nodes start to engage in a voting process. This is governed by the second new protocol, **Votor**. The voting process occurs over a 1-2 rounds of voting, ending with the decision to either append the block to the blockchain or reject it.
 
 ## Rotor: Block propagation
 
