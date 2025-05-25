@@ -22,7 +22,7 @@ Once a block has been propagated, nodes start to engage in a voting process. Thi
 
 ## Rotor: Block propagation
 
-**A core challenge** in blockchain technology is efficient block propagation: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
+**A core challenge in blockchain technology is efficient block propagation**: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
 
 At the moment, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
 
@@ -36,9 +36,9 @@ In total, **Rotor can be seen as a simplified and optimized version of Turbine**
 
 ## Votor: Voting algorithm
 
-After a block has been distributed by Rotor, the **voting process** starts. This process is governed by Alpenglow's novel voting protocol, Votor.
+After a block has been distributed by Rotor, the nodes start to vote on it. **This voting process is governed by Alpenglow's novel voting protocol, Votor.**
 
-**The core idea behind Votor is to run two voting paths at the same time and let nodes pick the one that's faster for them.** This means: Every node always starts voting on both paths. To finalize a block, a node only needs to complete one voting path. As a result, it automatically picks the path that happened to be faster this time. This ensures a relatively low latency for all nodes, no matter where they are located. It also allows the system to flexibly adapt to changes in the network topology. The overall effect is a dramatic decrease in average latency.
+**The core idea behind Votor is to run two voting paths at the same time and let nodes pick the one that's faster for *them*.** This means: Every node always starts voting on both paths. To finalize a block, a node only needs to complete one voting path. As a result, it automatically picks the path that happened to be faster this time. This ensures a relatively low latency for all nodes, no matter where they are located. It also allows the system to flexibly adapt to changes in the network topology. The overall effect is a dramatic decrease in average latency.
 
 In Votor, nodes operate on two voting paths:
 * Path 1: If at least 80% of stake participates, the block is finalized after one round of voting
