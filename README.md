@@ -129,7 +129,7 @@ With the advent of Alpenglow, Solana is poised for a new era of performance and 
 
 Alpenglow's primary components are Rotor and Votor. Rotor streamlines block dissemination by minimizing network hops, thus lowering latency. Votor then accelerates consensus by allowing block finalization within a maximum of two voting rounds, further decreasing latency.
 
-The synergistic effect of Rotor and Votor results in a significant overall latency reduction, unlocking unprecedented performance levels and enabling a new generation of real-time applications on the Solana network.
+**The synergistic effect of Rotor and Votor results in a significant overall latency reduction**, unlocking unprecedented performance levels and enabling a new generation of real-time applications on the Solana network.
 
 Alpenglow achieves this while also bolstering network resilience. With its 20+20 model, it can handle a high number of crashed nodes while protecting against a realistic level of malicious behavior.
 
