@@ -1,6 +1,6 @@
 # Alpenglow: The future of consensus on Solana
 
-**Alpenglow is the biggest change to Solana's core protocols in the history of the blockchain.** Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
+**Alpenglow is the biggest change to Solana's core protocols in the history of the blockchain.** Developed by Prof. Dr. Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
 
 The most compelling characteristic of Alpenglow is a **dramatic reduction in finalization latency**. In the current system, finalizing a block takes 12.8s on average. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
 
@@ -76,7 +76,7 @@ This design choice reflects a practical observation: in large-scale systems, man
 
 ### Illustration
 
-It can be hard to wrap your head around the practical implications of the 20+20 model on the network's robustness. Let's understand it better.
+It can be tricky to really understand what the 20+20 model means in practice.
 
 The key observation is that a down node can be seen as a Byzantine node since being unavailable to the network is a special case of a Byzantine fault.
 
