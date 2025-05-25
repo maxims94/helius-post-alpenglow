@@ -99,19 +99,19 @@ When can an attacker successfully shut down the network?
 
 ## Latency
 
-How long does it take for Alpenglow to finalize a block? More precisely, how long does it take for a leader to send out a block and then for the nodes to finalize it?
+How long does it take for Alpenglow to finalize a block? More precisely: how long does it take for a leader to send out a block and then for the nodes to finalize it?
 
-The fundamental lower bound is the base network latency. That's the time to send an arbitrary data packet from the leader to a node. You can't go lower than that.
+Here, the fundamental lower bound is the base network latency. That's the time to send an arbitrary data packet from the leader to a node. You can't go any lower than that.
 
-According to [experiments](ttps://drive.google.com/file/d/1y_7ddr8oNOknTQYHzXeeMD2ProQ0WjMs/view) run on a reference implementation, a rule of thumb has emerged: the time it takes to distribute and finalize a block is roughly 2x the base network latency. So, if the latency is 75ms, then it takes 150ms to finalize a block.
+According to [experiments](https://drive.google.com/file/d/1y_7ddr8oNOknTQYHzXeeMD2ProQ0WjMs/view) run on a reference implementation, a rule of thumb emerged: **the time it takes to distribute and finalize a block is roughly 2x the base network latency.** So, if the latency is 75ms, then it takes 150ms to finalize a block.
 
-Keep in mind that this refers to *finality*, i.e. the final decision on whether to put a transaction into the blockchain -- not optimistic confirmation or similar.
+Keep in mind that this refers to **finality**, i.e. the final decision on whether to put a transaction into the blockchain -- not optimistic confirmation or similar.
 
-Also, keep in mind that we're talking about a globally distributed Layer-1 blockchain managing billions of dollars in assets.
+Also, keep in mind that we're talking about a **globally distributed Layer-1 blockchain** managing assets worth billions of dollars.
 
-Taking this into account, this is a remarkably low figure!
+Taking this into account, this is a **remarkably low figure**!
 
-This dramatic reduction in latency directly translates to a significantly improved user experience, with transactions reaching finality almost instantaneously and users seeing results in almost real time.
+This dramatic reduction in latency directly leads to a **significantly improved user experience**, with transactions reaching finality almost instantly and users seeing results almost in real time.
 
 ## Multiple concurrent leaders
 
