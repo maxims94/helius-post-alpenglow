@@ -14,7 +14,7 @@ Alpenglow is a **novel consensus protocol** specifically designed for high-perfo
 
 While **maintaining Solana's fundamental structure**, Alpenglow replaces some of Solana's components with improved versions and introduces some key innovations.
 
-As in the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks.
+Following the structure of the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks.
 
 To efficiently disseminate the blocks to the network, they use **Rotor**, a new protocol introduced by Alpenglow.
 
