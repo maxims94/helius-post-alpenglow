@@ -127,15 +127,13 @@ That way, Alpenglow's technological revolution sets the stage for more future im
 
 With the advent of Alpenglow, Solana is poised for a new era of performance and capability.
 
-This innovative consensus protocol enables a dramatic reduction in latency, unlocking unprecedented levels of performance and enabling the development of a new generation of real-time applications.
+This innovative consensus protocol leads to a dramatic reduction in latency, unlocking unprecedented levels of performance and enabling the development of a new generation of real-time applications.
 
-Importantly, Alpenglow achieves this while bolstering network security.
+Alpenglow achieves this while also bolstering network security.
 
 Furthermore, it paves the way for future improvements, such as support for multiple concurrent leaders.
 
-These advancements promise a bright future for the Solana ecosystem, offering significant benefits to both users and developers.
-
-This comprehensive redesign of Solana's consensus architecture solidifies its position as a leading global high-performance proof-of-stake blockchain.
+These advancements promise a bright future for the Solana ecosystem, offering significant benefits to both users and developers. They solidify Solana's position as a leading global high-performance proof-of-stake blockchain.
 
 ## Additional Resources
 
