@@ -127,7 +127,9 @@ This way, Alpenglow's technological revolution sets the stage for even more impr
 
 With the advent of Alpenglow, Solana is poised for a new era of performance and capability.
 
-This innovative consensus protocol will lead to a dramatic reduction in latency, unlocking unprecedented levels of performance and enabling a new generation of real-time applications.
+Alpenglow's primary components are Rotor and Votor. Rotor streamlines block dissemination by minimizing network hops, thus lowering latency. Votor then accelerates consensus by allowing block finalization within a maximum of two voting rounds, further decreasing latency.
+
+The synergistic effect of Rotor and Votor results in a significant overall latency reduction, unlocking unprecedented performance characteristics and enabling a new generation of real-time applications on the Solana network.
 
 Alpenglow achieves this while also bolstering network security.
 
