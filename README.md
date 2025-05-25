@@ -131,7 +131,7 @@ Alpenglow's primary components are Rotor and Votor. Rotor streamlines block diss
 
 The synergistic effect of Rotor and Votor results in a significant overall latency reduction, unlocking unprecedented performance levels and enabling a new generation of real-time applications on the Solana network.
 
-Alpenglow achieves this while also bolstering network resilience. With its 20+20 model, it can handle a high number of crashed notes while protecting against a realistic level of malicious behavior.
+Alpenglow achieves this while also bolstering network resilience. With its 20+20 model, it can handle a high number of crashed nodes while protecting against a realistic level of malicious behavior.
 
 Furthermore, it paves the way for future improvements, such as support for multiple concurrent leaders.
 
