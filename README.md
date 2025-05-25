@@ -26,15 +26,13 @@ A **core challenge** in blockchain technology is efficient block propagation: ho
 
 Currently, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
 
-In the future, Solana will adopt Rotor, the newly designed efficient block propagation protocol in Alpenglow.
+In the future, Solana will adopt Rotor, a newly designed efficient block propagation protocol.
 
-Alpenglow's block propagation protocol is the newly introduced Rotor protocol.
+**Rotor's design is inspired by Turbine and retains its core strengths, but simplifies the architecture.** Unlike Turbine's multi-layered structure, Rotor uses a single layer of relay nodes to disseminate data from the leader to all other nodes. The relay nodes are regular nodes that are selected according to a predefined method. For each use of Rotor, a different subset of nodes is selected to function as relays. One innovation of Alpenglow is a novel selection method that is particularly resilient.
 
-Rotor's architecture is very similar to Turbine, but it only uses a single layer instead of a variable number of layers. This layer consists of relay nodes whose task it is to send the data from the leader to all other nodes. Each time Rotor is used, a different subset of nodes is selected as relays. For that, Alpenglow uses a novel sampling method designed to improve resilience.
+The rationale behind Rotor's single-layer design stems from the network delay introduced by each additional layer in Turbine's architecture. Each additional layer leads to an additional network hop, which becomes a significant bottleneck in practice (the speed of light is too slow!). So, the goal of the design is to minimize the number of network hops, which can be achieved by sticking to a single retransmission layer.
 
-In total, Rotor can be seen as a simplified and optimized version of Turbine.
-
-The choice for this design is because each additional layer in Turbine leads to an additional hop and, therefore, to an additional network delay. In practice, this is a bottleneck -- the speed of light is too slow. This delay can be minimized by sticking to a single retransmission layer.
+In total, **Rotor can be seen as a simplified and optimized version of Turbine**.
 
 ## Votor: Voting algorithm
 
