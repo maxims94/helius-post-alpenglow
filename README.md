@@ -117,7 +117,7 @@ This drastic reduction in latency **directly leads to a significantly improved u
 
 Alpenglow's approach will likely simplify the [implementation](https://x.com/aeyakovenko/status/1924814494808891843) of multiple concurrent leaders.
 
-This would allow Solana to [minimize the amount of MEV](https://x.com/aeyakovenko/status/1810222589991583922) extracted from its users: If users can choose between multiple leaders, they can choose the most favorable offer, which leads to competition among leaders to minimize MEV in their proposed block.
+This would allow Solana to [minimize the amount of MEV](https://x.com/aeyakovenko/status/1810222589991583922) extracted from its users: If users can choose between multiple leaders, they can choose the one with the most favorable offer, which leads to competition among leaders to minimize MEV in their proposed block.
 
 This would also make it feasible to develop an on-chain [central limit order book](https://www.anza.xyz/blog/the-path-to-decentralized-nasdaq).
 
