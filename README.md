@@ -1,6 +1,6 @@
 # Alpenglow: The future of Solana's consensus
 
-Alpenglow is the **biggest change to Solana's core protocols** that the blockchain has ever seen. Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
+**Alpenglow is the biggest change to Solana's core protocols in the history of the blockchain.** Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
 
 The most compelling characteristic of Alpenglow is a **dramatic reduction in finalization latency**. In the current system, it takes 12.8s on average to finalize a block. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
 
@@ -22,7 +22,7 @@ Once a block has been propagated, nodes start to engage in a voting process. Thi
 
 ## Rotor: Block propagation
 
-A **core challenge** in blockchain technology is efficient block propagation: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
+**A core challenge** in blockchain technology is efficient block propagation: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
 
 At the moment, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
 
@@ -46,9 +46,9 @@ In Votor, nodes operate on two voting paths:
 
 The dominant factor in how long a round of voting takes is the network delay. This is mostly determined by the geographical position of a node relative to the other nodes.
 
-If a node is part of **geographically close high-stake cluster** (e.g. with a latency of 5ms), then the two rounds of voting may happen much faster (in ca. 10ms) than a single round that needs to include remote notes with high latencies.
+If a node is part of **geographically close high-stake cluster** (e.g. with a latency of 5ms), then the two rounds of voting happen much faster (in ca. 10ms) than a single round that needs to include remote notes with high latencies (e.g. 100ms).
 
-Conversely, if a **node is far away from most other nodes** (more precisely, stake), then the latency is so high that one round of voting finishes much earlier than two rounds (where the high latency is effectively doubled).
+Conversely, if a **node is far away from most other nodes** (more precisely, stake), then the latency is so high that one round of voting finishes much earlier than two rounds, where the high latency is effectively doubled.
 
 By executing both voting paths concurrently, Votor dynamically adapts to network conditions, ensuring rapid consensus at all times and for all nodes.
 
@@ -56,17 +56,15 @@ By executing both voting paths concurrently, Votor dynamically adapts to network
 
 ### Three types of nodes
 
-The cleverness of Alpenglow comes from splitting up faulty nodes into Byzantine and down nodes. In total, our model considers three types of nodes:
+Before we can reason about the fault tolerance of Alpenglow's network, we need to introduce a model of node types. Usually, a model only distinguishes between two types of nodes: correct and Byzantine. **The cleverness of Alpenglow comes from splitting up faulty nodes into Byzantine and down nodes.** So, in total, the model considers three types of nodes:
 
-Correct node: A node following the consensus protocol
+**Correct node**: A node that strictly adheres to the consensus protocol
 
-Byzantine node: A node exhibiting a Byzantine fault is faulty in an arbitrary way. It might be sending incorrect messages, wrongly confirming blocks, or trying to disrupt the consensus process.
+**Byzantine node**: A node that is faulty in an arbitrary way. It might be actively malicious, sending syntactically incorrect messages, confirming invalid blocks, or trying to disrupt the consensus process.
 
-Down Node: A node that is failing to participate in the network. It's silent rather than malicious. This could be due to a software crash, hardware failure or loss of network connectivity.
+**Down Node**: A node that is failing to participate in the network. It's silent rather than malicious. This could be due to a software crash, hardware failure or loss of network connectivity.
 
-Why treat down nodes specially / separate them out? Since truly malicious nodes are very rare (there's little incentive to), but it happens frequently that nodes go down (hardware issue, network issue, software crashes)
-
-So, in a real large scale distributed blockchain system, we will probably see significantly less than 33% byzantines. Instead, realistic bad behavior often comes from machine misconfigurations, software bugs, and network or power outages. In other words, large scale faults are likely accidents rather than coordinated attacks.
+Why do we treat down nodes as a separate case? In a real-world blockchain systems, Byzantine nodes are very rare since nodes have no incentive to behave that way. Instead, bad behavior often comes from machine misconfigurations, software crashes, hardware issues and network or power outages. In other words, large scale faults are likely accidents rather than coordinated attacks. It is evident that down nodes are easier to manage than Byzantine nodes. **By seprating these two failure modes, we can make stronger guarantees about the network's fault tolerance.**
 
 ### 20+20 resilience
 
