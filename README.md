@@ -121,7 +121,7 @@ This would allow Solana to [minimize the amount of MEV](https://x.com/aeyakovenk
 
 This would also make it feasible to develop an on-chain [central limit order book](https://www.anza.xyz/blog/the-path-to-decentralized-nasdaq).
 
-This way, Alpenglow's technological revolution sets the stage for more even improvements on Solana.
+This way, Alpenglow's technological revolution sets the stage for even more improvements on Solana.
 
 ## Conclusion
 
