@@ -46,7 +46,7 @@ In Votor, nodes operate on two voting paths:
 
 The dominant factor in how long a round of voting takes is the network delay. This is mostly determined by the geographical location of a node relative to the other nodes.
 
-If a node is part of a **geographically close high-stake cluster** (e.g. with a latency of 5ms), then the two rounds of voting happen much faster (in ca. 10ms) than a single round that needs to include remote notes with high latencies (e.g. 100ms).
+If a node is part of a **geographically close high-stake cluster** (e.g. with a latency of 5ms), then the two rounds of voting happen much faster (in ca. 10ms) than a single round that needs to include remote nodes with high latencies (e.g. 100ms).
 
 Conversely, if a **node is far away from most other nodes** (more precisely, stake), then the latency is so high that one round of voting finishes much earlier than two rounds (where the high latency is effectively doubled).
 
