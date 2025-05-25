@@ -111,7 +111,7 @@ Also, keep in mind that we're talking about adding a transaction to a **globally
 
 Taking this into account, **this is a remarkably low figure!**
 
-This drastic reduction in latency **directly leads to a significantly improved user experience**, with transactions reaching finality almost instantly and users seeing results almost in real-time.
+This drastic reduction in latency **directly leads to a significantly improved user experience**, with transactions reaching finality almost instantly and users seeing results almost in real time.
 
 ## Multiple concurrent leaders
 
