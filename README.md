@@ -1,12 +1,12 @@
 # Alpenglow: The future of Solana's consensus
 
-At Accelerate 2025, it was announced that Solana will replace its current consensus mechanism with Alpenglow. This is the biggest change to its core protocols that Solana has ever seen.
+Alpenglow is the biggest change to Solana's core protocols the blockchain has ever seen. Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
 
-Designed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich, Alpenglow represents a fundamental shift in Solana's consensus mechanism, succeeding TowerBFT and Proof-of-History.
+The most compelling characteristic of Alpenglow is a dramatic reduction in finalization latency. In the current system, it takes 12.8s on average to finalize a block. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
 
-Alpenglow's most compelling characteristic is its drastic reduction of finalization latency. In the current system, it takes 12.8s on average to finalize a block. With Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
+The protocol achieves this speed-up while also bolstering network security and resilience. The network will remain operational even if up to 40% of nodes are faulty (under some realistic assumptions). This is achieved through its unique 20+20 model, which marks a paradigm shift in attack modeling.
 
-The protocol achieves this while also bolstering network security and resilience. The network will remain operational even if up to 40% of nodes are faulty (under some realistic assumptions). This is achieved through its unique 20+20 model, which marks a paradigm shift in attack modeling.
+Let's explore how it works and what it means for Solana's future.
 
 ## What is Alpenglow?
 
