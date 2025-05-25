@@ -1,5 +1,3 @@
-# 2025-05-25: Version 3
-
 # Alpenglow: The future of Solana's consensus
 
 At Accelerate 2025, it was announced that Solana will replace its current consensus mechanism with Alpenglow. This is the biggest change to its core protocols that Solana has ever seen.
@@ -66,9 +64,7 @@ Down Node: A node that is failing to participate in the network. It's silent rat
 
 Why treat down nodes specially / separate them out? Since truly malicious nodes are very rare (there's little incentive to), but it happens frequently that nodes go down (hardware issue, network issue, software crashes)
 
-q{
 So, in a real large scale distributed blockchain system, we will probably see significantly less than 33% byzantines. Instead, realistic bad behavior often comes from machine misconfigurations, software bugs, and network or power outages. In other words, large scale faults are likely accidents rather than coordinated attacks.
-}
 
 ### 20+20 resilience
 
@@ -90,12 +86,12 @@ So, you can say that the network is stable if the faulty nodes can be split up i
 
 Some examples:
 
-Scenario              | Network              | Explanation
-----------------------------------------------------------
-5% Byz, 15% down      | stable               | both conditions hold
-21% Byz, 0% down      | breaks               | too many Byzantine nodes
-10% Byz, 25% down     | stable               | count 5% of down nodes as Byzantine
-10% Byz, 33% down     | breaks               | can't count 13% as Byzantine
+|Scenario              | Network              | Explanation                            |
+|----------------------|----------------------|----------------------------------------|
+|5% Byz, 15% down      | stable               | both conditions hold                   |
+|21% Byz, 0% down      | breaks               | too many Byzantine nodes               |
+|10% Byz, 25% down     | stable               | count 5% of down nodes as Byzantine    |
+|10% Byz, 33% down     | breaks               | can't count 13% as Byzantine           |
 
 In the common case, the portion of Byzantine stake is very low (<5%), leaving room to deal with network outages and crashed nodes.
 
