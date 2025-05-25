@@ -86,12 +86,12 @@ So, you can say that the network is stable if the faulty nodes can be split up i
 
 Some examples:
 
-|Scenario              | Network              | Explanation                            |
-|----------------------|----------------------|----------------------------------------|
-|5% Byz, 15% down      | stable               | both conditions hold                   |
-|21% Byz, 0% down      | breaks               | too many Byzantine nodes               |
-|10% Byz, 25% down     | stable               | count 5% of down nodes as Byzantine    |
-|10% Byz, 33% down     | breaks               | can't count 13% as Byzantine           |
+|Scenario                    | Network              | Explanation                            |
+|----------------------------|----------------------|----------------------------------------|
+|5%  Byzantine, 15% down     | stable               | both conditions hold                   |
+|21% Byzantine, 0%  down     | breaks               | too many Byzantine nodes               |
+|10% Byzantine, 25% down     | stable               | count 5% of down nodes as Byzantine    |
+|10% Byzantine, 33% down     | breaks               | can't count 13% as Byzantine           |
 
 In the common case, the portion of Byzantine stake is very low (<5%), leaving room to deal with network outages and crashed nodes.
 
