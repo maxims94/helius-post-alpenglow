@@ -60,7 +60,7 @@ Before we can reason about the fault tolerance of Alpenglow's network, we need t
 
 **Correct node**: A node that strictly adheres to the consensus protocol
 
-**Byzantine node**: A node that is faulty in an arbitrary way. It might be actively malicious, sending syntactically incorrect messages, confirming invalid blocks, or trying to disrupt the consensus process.
+**Byzantine node**: A node that is faulty in an arbitrary way. It might be actively malicious, send syntactically incorrect messages, confirm invalid blocks or try to disrupt the consensus process.
 
 **Down Node**: A node that is failing to participate in the network. It's silent rather than malicious. This could be due to a software crash, hardware failure or loss of network connectivity.
 
