@@ -127,7 +127,7 @@ This way, Alpenglow's technological revolution sets the stage for even more impr
 
 With the advent of Alpenglow, Solana is poised for a new era of performance and capability.
 
-This innovative consensus protocol will lead to a dramatic reduction in latency, unlocking unprecedented levels of performance and enabling the development of a new generation of real-time applications.
+This innovative consensus protocol will lead to a dramatic reduction in latency, unlocking unprecedented levels of performance and enabling a new generation of real-time applications.
 
 Alpenglow achieves this while also bolstering network security.
 
