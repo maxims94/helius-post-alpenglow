@@ -12,7 +12,7 @@ Let's explore how it works and what it means for Solana's future.
 
 Alpenglow is a **novel consensus protocol** specifically designed for high-performance proof-of-stake blockchains. Like any consensus protocol, its purpose is to create agreement on the ledger's state between the nodes of the network.
 
-While maintaining Solana's fundamental structure, Alpenglow replaces some of its components with enhanced versions and introduces some key innovations.
+While **maintaining Solana's fundamental structure**, Alpenglow replaces some of its components with enhanced versions and introduces some key innovations.
 
 As in the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks.
 
@@ -24,11 +24,11 @@ Once a block has been propagated, nodes start to engage in a voting process. Thi
 
 A **core challenge** in blockchain technology is efficient block propagation: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
 
-Currently, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
+At the moment, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
 
 In the future, Solana will adopt Rotor, a newly designed efficient block propagation protocol.
 
-**Rotor's design is inspired by Turbine and retains its core strengths, but simplifies the architecture.** Unlike Turbine's multi-layered structure, Rotor uses a single layer of relay nodes to disseminate data from the leader to all other nodes. The relay nodes are regular nodes that are selected according to a predefined method. For each use of Rotor, a different subset of nodes is selected to function as relays. One innovation of Alpenglow is a novel selection method that is particularly resilient.
+**Rotor's design is inspired by Turbine and retains its core strengths, but uses a simplified architecture.** Unlike Turbine's multi-layered structure, Rotor uses a single layer of relay nodes to disseminate data from the leader to all other nodes. The relay nodes are regular nodes that are selected according to a predefined method. For each use of Rotor, a different subset of nodes is selected to function as relays. One innovation of Alpenglow is a novel selection method that is particularly resilient.
 
 The rationale behind Rotor's single-layer design stems from the network delay introduced by each additional layer in Turbine's architecture. Each additional layer leads to an additional network hop, which becomes a significant bottleneck in practice (the speed of light is too slow!). So, the goal of the design is to minimize the number of network hops, which can be achieved by sticking to a single retransmission layer.
 
@@ -36,9 +36,9 @@ In total, **Rotor can be seen as a simplified and optimized version of Turbine**
 
 ## Votor: Voting algorithm
 
-After a block has been distributed via Rotor, the voting process starts. For this, Alpenglow uses its novel voting protocol, Votor.
+After a block has been distributed by Rotor, the **voting process** starts. This process is governed by Alpenglow's novel voting protocol, Votor.
 
-Votor runs two voting path concurrently: a primary path for the typical network situation and a fallback path for less ideal conditions. All nodes always start both paths. Only one path needs to finish for a node to finalize a block. This way, we take the faster of the two and thereby reduce latency.
+**The core idea behind Votor is to run two voting paths at the same time and let nodes pick the one that's faster for them.** This means: Every node always starts voting on both paths. A node only needs to complete one path to finalize a block. This way,the node automatically picks the faster of the two. This allows the network to work well for all nodes, no matter where they are, and to  adapt flexibly to changes network topologies. The result is always a reduction in latency.
 
 Votor has two voting paths:
 * Path 1: If at least 80% of stake participates, the block is finalized after one round of voting
