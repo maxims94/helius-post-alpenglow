@@ -68,7 +68,7 @@ Why do we treat down nodes as a separate case? In a real-world blockchain system
 
 ### 20+20 resilience
 
-Alpenglow has a unique **20+20 model of network resilience**. It guarantees the network's operability as long as less than 20% of stake is controlled by Byzantine nodes and up to 20% of stake is controlled by down nodes. This means that, even under harsh conditions, the network will continue to function.
+Alpenglow has a **unique 20+20 model of network resilience**. It guarantees the network's operability as long as less than 20% of stake is controlled by Byzantine nodes and up to 20% of stake is controlled by down nodes. This means that, even under harsh conditions, the network will continue to function.
 
 While Alpenglow does not reach the best possible Byzantine fault tolerance of 33% (like today's Solana), it vastly improves on the most common and realistic case of down nodes.
 
@@ -76,7 +76,7 @@ This is a design choice that reflects a practical observation: in large-scale sy
 
 ### Illustration
 
-It can be hard to wrap your head around the practical implications of the 20+20 model for the network's robustness. Let's understand it better.
+It can be hard to wrap your head around the practical implications of the 20+20 model on the network's robustness. Let's understand it better.
 
 The key observation is that a down node can be seen as a Byzantine node since being unavailable to the network is a special case of a Byzantine fault.
 
@@ -84,14 +84,14 @@ So, we can say that the network remains stable if the faulty nodes can be split 
 
 Some examples:
 
-|Scenario                    | Network              | Explanation                            |
-|----------------------------|----------------------|----------------------------------------|
-|5%  Byzantine, 15% down     | stable               | both conditions hold                   |
-|21% Byzantine, 0%  down     | breaks               | too many Byzantine nodes               |
-|10% Byzantine, 25% down     | stable               | count 5% of down nodes as Byzantine    |
-|10% Byzantine, 33% down     | breaks               | can't count 13% as Byzantine           |
+|Scenario                    | Network              | Explanation                              |
+|----------------------------|----------------------|------------------------------------------|
+|5%  Byzantine, 15% down     | stable               | both conditions hold                     |
+|21% Byzantine, 0%  down     | breaks               | >= 20% Byzantine nodes                   |
+|10% Byzantine, 25% down     | stable               | count 5% of down nodes as Byzantine      |
+|10% Byzantine, 33% down     | breaks               | can't count the excess 13% as Byzantine  |
 
-In the common case, the portion of Byzantine stake is very low (<5%), leaving plenty room to deal with network outages and crashed nodes.
+In the common case, the portion of Byzantine stake is very low (<5%), leaving plenty of room to deal with network outages and crashed nodes.
 
 When can an attacker successfully shut down the network?
 * When they get > 20% stake,
@@ -99,17 +99,19 @@ When can an attacker successfully shut down the network?
 
 ## Latency
 
-How long does it take Alpenglow to finalize a block? More precisely, how long does it take for a node to receive a block via Rotor and then finalize it via Votor?
+How long does it take for Alpenglow to finalize a block? More precisely, how long does it take for a leader to send out a block and then for the nodes to finalize it?
 
-The fundamental lower bound is the base network latency. That's the time to send one packet from the leader to a node. You can't go lower than that.
+The fundamental lower bound is the base network latency. That's the time to send an arbitrary data packet from the leader to a node. You can't go lower than that.
 
-As a rule of thumb, the time it takes to finalize a block is roughly 2x the base network latency. So, if the latency is 75ms, then it takes 150ms to finalize the block.
+According to [experiments](ttps://drive.google.com/file/d/1y_7ddr8oNOknTQYHzXeeMD2ProQ0WjMs/view) run on a reference implementation, a rule of thumb has emerged: the time it takes to distribute and finalize a block is roughly 2x the base network latency. So, if the latency is 75ms, then it takes 150ms to finalize a block.
 
 Keep in mind that this refers to *finality*, i.e. the final decision on whether to put a transaction into the blockchain -- not optimistic confirmation or similar.
 
-This is a remarkably low figure for a globally distributed Layer-1 blockchain.
+Also, keep in mind that we're talking about a globally distributed Layer-1 blockchain managing billions of dollars in assets.
 
-This dramatic reduction in latency directly translates to a significantly improved user experience, with transactions reaching finality almost instantaneously and users seeing almost real-time results.
+Taking this into account, this is a remarkably low figure!
+
+This dramatic reduction in latency directly translates to a significantly improved user experience, with transactions reaching finality almost instantaneously and users seeing results in almost real time.
 
 ## Multiple concurrent leaders
 
