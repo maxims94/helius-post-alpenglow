@@ -1,6 +1,6 @@
 # Alpenglow: The future of Solana's consensus
 
-Alpenglow is the biggest change to Solana's core protocols that the blockchain has ever seen. Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
+Alpenglow is the **biggest change to Solana's core protocols** that the blockchain has ever seen. Developed by Roger Wattenhofer, Quentin Kniep and Kobi Sliwinski from the ETH Zurich and unveiled at Accelerate 2025, Alpenglow represents a fundamental shift in Solana's consensus mechanism, replacing long-established mechanisms such as TowerBFT and Proof-of-History.
 
 The most compelling characteristic of Alpenglow is a **dramatic reduction in finalization latency**. In the current system, it takes 12.8s on average to finalize a block. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 100x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
 
@@ -10,7 +10,7 @@ Let's explore how it works and what it means for Solana's future.
 
 ## What is Alpenglow?
 
-Alpenglow is a novel consensus protocol specifically designed for high-performance proof-of-stake blockchains. Like any consensus protocol, its purpose is to create agreement on the ledger's state between the nodes of the network.
+Alpenglow is a **novel consensus protocol** specifically designed for high-performance proof-of-stake blockchains. Like any consensus protocol, its purpose is to create agreement on the ledger's state between the nodes of the network.
 
 While maintaining Solana's fundamental structure, Alpenglow replaces some of its components with enhanced versions and introduces some key innovations.
 
@@ -22,9 +22,11 @@ Once a block has been propagated, nodes start to engage in a voting process. Thi
 
 ## Rotor: Block propagation
 
-A core challenge in blockchain technology is efficient block propagation: how does a leader distribute a newly created, potentially large (in Solana, 128MB), block to the entire network without being constrained by its own bandwidth? 
+A **core challenge** in blockchain technology is efficient block propagation: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
 
-Solana's current solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all receiving nodes in a tree-like structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a subset of nodes in the next layer, as determined by the turbine tree. This structured approach minimizes communication overhead compared to sequential or flooded propagation, which is crucial for Solana's high throughput and scalability. 
+Currently, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
+
+In the future, Solana will adopt Rotor, the newly designed efficient block propagation protocol in Alpenglow.
 
 Alpenglow's block propagation protocol is the newly introduced Rotor protocol.
 
