@@ -22,9 +22,9 @@ Once a block has been propagated, nodes start to engage in a voting process. Thi
 
 ## Rotor: Block propagation
 
-**A core challenge in blockchain technology is efficient block propagation**: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
+A core challenge in blockchain technology is **efficient block propagation**: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
 
-At the moment, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana). Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
+**At the moment, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana).** Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
 
 In the future, Solana will adopt Rotor, a newly designed efficient block propagation protocol.
 
@@ -68,21 +68,19 @@ Why do we treat down nodes as a separate case? In a real-world blockchain system
 
 ### 20+20 resilience
 
-Alpenglow has a unique 20+20 model of network resilience. It guarantees the network operability as long as less than 20% of stake is controlled by Byzantine nodes and up to 20% of stake is controlled by down nodes.
+Alpenglow has a unique **20+20 model of network resilience**. It guarantees the network's operability as long as less than 20% of stake is controlled by Byzantine nodes and up to 20% of stake is controlled by down nodes. This means that, even under harsh conditions, the network will continue to function.
 
-This allows the protocol to operate even in harsh network conditions.
+While Alpenglow does not reach the best possible Byzantine fault tolerance of 33% (like today's Solana), it vastly improves on the most common and realistic case of down nodes.
 
-While Alpenglow does not reach the best theoretically possible fault tolerance against Byzantine nodes of 33% (like today's Solana), it vastly improves on the most common case of down nodes.
-
-This is a design choice that reflects a practical observation: in large-scale systems, many failures are due to things like network outages or hardware crashes, not necessarily intentional malice. Alpenglow aims to handle a high volume of these "accidental" failures in addition to a base level of malicious behavior.
+This is a design choice that reflects a practical observation: in large-scale systems, many failures are due to mishaps like network outages or hardware crashes, not intentional malice. **Alpenglow aims to handle a high volume of these "accidental" failures in addition to a base level of malicious behavior.**
 
 ### Illustration
 
-It can be hard to wrap your head around what the 20+20 model means for the network's robustness in practical terms. Let's understand it better.
+It can be hard to wrap your head around the practical implications of the 20+20 model for the network's robustness. Let's understand it better.
 
 The key observation is that a down node can be seen as a Byzantine node since being unavailable to the network is a special case of a Byzantine fault.
 
-So, you can say that the network is stable if the faulty nodes can be split up into < 20% Byzantine and <= 20% down nodes.
+So, we can say that the network remains stable if the faulty nodes can be split up into < 20% Byzantine and <= 20% down nodes.
 
 Some examples:
 
@@ -93,7 +91,7 @@ Some examples:
 |10% Byzantine, 25% down     | stable               | count 5% of down nodes as Byzantine    |
 |10% Byzantine, 33% down     | breaks               | can't count 13% as Byzantine           |
 
-In the common case, the portion of Byzantine stake is very low (<5%), leaving room to deal with network outages and crashed nodes.
+In the common case, the portion of Byzantine stake is very low (<5%), leaving plenty room to deal with network outages and crashed nodes.
 
 When can an attacker successfully shut down the network?
 * When they get > 20% stake,
