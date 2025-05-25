@@ -18,7 +18,7 @@ Following the structure of the current protocol, time is segmented into slots, e
 
 To efficiently disseminate the blocks to the network, Alpenglow uses **Rotor**, a newly introduced block propagation protocol.
 
-Once a block has been propagated, nodes start to engage in a voting process. It is governed by the second new protocol, **Votor**. The voting process occurs over 1-2 rounds of voting, ending with the decision to either append the block to the blockchain or reject it.
+Once a block has been propagated, nodes start to vote on it. This voting process is governed by the second new protocol, **Votor**. The voting process occurs over 1-2 rounds of voting, ending with the decision to either append the block to the blockchain or reject it.
 
 ## Rotor: Block propagation
 
