@@ -16,7 +16,7 @@ While **maintaining Solana's fundamental structure**, Alpenglow replaces some of
 
 Following the structure of the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks.
 
-To efficiently disseminate the blocks to the network, Alpenglow uses the newly introduced protocol **Rotor**.
+To efficiently disseminate the blocks to the network, Alpenglow uses **Rotor**, a newly introduced block propagation protocol.
 
 Once a block has been propagated, nodes start to engage in a voting process. It is governed by the second new protocol, **Votor**. The voting process occurs over 1-2 rounds of voting, ending with the decision to either append the block to the blockchain or reject it.
 
