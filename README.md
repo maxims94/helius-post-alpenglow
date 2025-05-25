@@ -4,9 +4,9 @@
 
 The most compelling characteristic of Alpenglow is a **dramatic reduction in finalization latency**. In the current system, finalizing a block takes 12.8s on average. Once Solana has transitioned to Alpenglow, finality can be reached in a median time of 150ms. That's a staggering 85x improvement over the current system, rivaling Web2 infrastructure in responsiveness.
 
-The protocol achieves this speed-up while also **bolstering network security and resilience**. Under some realistic assumptions, the network will remain operational even if up to 40% of nodes are faulty. This is achieved through its unique 20+20 model, which marks a paradigm shift in attack modeling.
+The protocol achieves this speed-up while also **bolstering network security and resilience**. Under realistic assumptions, the network will remain operational even if up to 40% of nodes are faulty. This is achieved through its unique 20+20 model, which marks a paradigm shift in attack modeling.
 
-Let's explore how it works and what it means for Solana's future.
+In this guide, we explore how it works and what it means for Solana's future.
 
 ## What is Alpenglow?
 
