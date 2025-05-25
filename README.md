@@ -99,7 +99,7 @@ When can an attacker successfully shut down the network?
 
 ## Latency
 
-How long does it take for Alpenglow to finalize a block? More precisely: how long does it take for a leader to send out a block and then for the nodes to finalize it?
+**How long does it take for Alpenglow to finalize a block?** More precisely: how long does it take for a leader to send out a block and then for the nodes to finalize it?
 
 Here, the fundamental lower bound is the base network latency. That's the time to send an arbitrary data packet from the leader to a node. You can't go any lower than that.
 
@@ -109,9 +109,9 @@ Keep in mind that this refers to **finality**, i.e. the final decision on whethe
 
 Also, keep in mind that we're talking about a **globally distributed Layer-1 blockchain** managing assets worth billions of dollars.
 
-Taking this into account, this is a **remarkably low figure**!
+Taking this into account, **this is a remarkably low figure**!
 
-This dramatic reduction in latency directly leads to a **significantly improved user experience**, with transactions reaching finality almost instantly and users seeing results almost in real time.
+This drastic reduction in latency **directly leads to a significantly improved user experience**, with transactions reaching finality almost instantly and users seeing results almost in real time.
 
 ## Multiple concurrent leaders
 
