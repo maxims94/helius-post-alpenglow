@@ -22,7 +22,7 @@ Once a block has been propagated, nodes start voting on it. The voting process i
 
 ## Rotor: Block propagation
 
-A core challenge in blockchain technology is **efficient block propagation**: how does a leader distribute a newly created, potentially large (128MB in Solana) block to the entire network without being constrained by its own bandwidth?
+A core challenge in blockchain technology is **efficient block propagation**: how does a leader distribute a newly created, potentially large block (128MB in Solana) to the entire network without being constrained by its own bandwidth?
 
 **For now, Solana's solution to this is [Turbine](https://www.helius.dev/blog/turbine-block-propagation-on-solana).** Turbine arranges all nodes in a hierarchical structure called the turbine tree. The leader sends the block to the tree's root and each node then forwards the data to a unique subset of nodes in the next layer, as determined by the turbine tree. This approach minimizes communication overhead compared to sequential or flooded propagation. It is crucial for Solana's high throughput and scalability. 
 
