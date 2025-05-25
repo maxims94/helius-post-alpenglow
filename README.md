@@ -12,7 +12,7 @@ In this guide, we explore how it works and what it means for Solana's future.
 
 Alpenglow is a **novel consensus protocol** specifically designed for high-performance proof-of-stake blockchains. Like any consensus protocol, its purpose is to create agreement on the ledger's state between the nodes of the network.
 
-While **maintaining Solana's fundamental structure**, Alpenglow replaces some of its components with enhanced versions and introduces some key innovations.
+While **maintaining Solana's fundamental structure**, Alpenglow replaces some of Solana's components with improved versions and introduces some key innovations.
 
 As in the current protocol, time is segmented into slots, each with a designated leader. The leader is responsible for receiving transactions and constructing them into blocks.
 
