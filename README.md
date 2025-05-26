@@ -76,7 +76,7 @@ This design choice reflects a practical observation: in large-scale systems, man
 
 ### Illustration
 
-It can be tricky to really understand what the 20+20 model means in practice.
+Let's illustrate what the 20+20 model means in practice.
 
 The key observation is that a down node can be seen as a Byzantine node since being unavailable to the network is a special case of a Byzantine fault.
 
@@ -84,18 +84,21 @@ So, we can say that the network remains stable if the faulty nodes can be split 
 
 Some examples:
 
-|Scenario                    | Network              | Explanation                              |
-|----------------------------|----------------------|------------------------------------------|
-|5%  Byzantine, 15% down     | stable               | both conditions hold                     |
-|21% Byzantine, 0%  down     | breaks               | >= 20% Byzantine nodes                   |
-|10% Byzantine, 25% down     | stable               | count 5% of down nodes as Byzantine      |
-|10% Byzantine, 33% down     | breaks               | can't count the excess 13% as Byzantine  |
+|Scenario                    | Network                  | Explanation                              |
+|----------------------------|--------------------------|------------------------------------------|
+|5%  Byzantine, 15% down     | stable                   | both conditions hold                     |
+|21% Byzantine, 0%  down     | breaks [1]               | >= 20% Byzantine nodes                   |
+|10% Byzantine, 25% down     | stable                   | count 5% of down nodes as Byzantine      |
+|10% Byzantine, 33% down     | breaks [2]               | can't count the excess 13% as Byzantine  |
+
+[1] = Could attack safety, but the stake is slashable
+[2] = This only breaks liveness, not safety. Liveness is restored once we again have <40% faulty nodes. Thanks, [Quentin](https://x.com/qkniep/status/1926952056549478438)!
 
 In the common case, the portion of Byzantine stake is very low (<5%), leaving plenty of room to deal with network outages and crashed nodes.
 
-When can an attacker successfully shut down the network?
-* When they get > 20% stake,
-* Or, if they acquire p% stake, but also manage to shut down more than 40-p% of nodes (e.g. 10% and 31%)
+Under which conditions can an attacker successfully interfere with the network?
+* If they get >= 20% stake, or,
+* If they acquire < 20% stake, but also manage to shut down enough nodes so that >40% of nodes are faulty (e.g. 10% stake and 31% down nodes)
 
 ## Latency
 
