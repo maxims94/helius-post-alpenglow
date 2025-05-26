@@ -93,7 +93,7 @@ Some examples:
 
 [1] = Could attack safety, but this is slashable
 
-[2] = This only breaks liveness, not safety. Liveness is restored after returning to <40% faulty nodes. Thanks, [Quentin](https://x.com/qkniep/status/1926952056549478438)!
+[2] = This only breaks liveness, not safety. Liveness is restored after the network returns to <40% faulty nodes. Thanks, [Quentin](https://x.com/qkniep/status/1926952056549478438)!
 
 In the common case, the portion of Byzantine stake is very low (<5%), leaving plenty of room to deal with network outages and crashed nodes.
 
