@@ -99,7 +99,7 @@ In the common case, the portion of Byzantine stake is very low (<5%), leaving pl
 
 Under which conditions can an attacker successfully interfere with the network?
 * If they get >= 20% stake, or,
-* If they acquire < 20% stake, but also manage to shut down enough nodes so that >40% of nodes are faulty (e.g. 10% stake and 31% down nodes)
+* If they acquire < 20% stake, but also manage to shut down enough nodes so that >= 40% of nodes are faulty (e.g. 10% stake and 31% down nodes)
 
 ## Latency
 
