@@ -92,6 +92,7 @@ Some examples:
 |10% Byzantine, 33% down     | breaks [2]               | can't count the excess 13% as Byzantine  |
 
 [1] = Could attack safety, but the stake is slashable
+
 [2] = This only breaks liveness, not safety. Liveness is restored once we again have <40% faulty nodes. Thanks, [Quentin](https://x.com/qkniep/status/1926952056549478438)!
 
 In the common case, the portion of Byzantine stake is very low (<5%), leaving plenty of room to deal with network outages and crashed nodes.
