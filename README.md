@@ -70,7 +70,7 @@ Why do we treat down nodes as a separate case? In real-world blockchain systems,
 
 Alpenglow has a **unique 20+20 model of network resilience**. It guarantees the network's operability as long as less than 20% of stake is controlled by Byzantine nodes and up to 20% of stake is controlled by down nodes. This means that, even under harsh conditions, the network will continue to function.
 
-While Alpenglow does not reach the best possible Byzantine fault tolerance of 33% (like today's Solana), it vastly improves on the most common and realistic case of down nodes.
+While Alpenglow does not reach the best possible Byzantine fault tolerance of 33%, it vastly improves on the most common and realistic case of down nodes.
 
 This design choice reflects a practical observation: in large-scale systems, many failures are due to mishaps like network outages or hardware crashes, not intentional malice. **Alpenglow aims to handle a high volume of these "accidental" failures in addition to a base level of malicious behavior.**
 
